@@ -1,0 +1,2 @@
+seg 만들기
+penwick tree 써야하는 거 같다
