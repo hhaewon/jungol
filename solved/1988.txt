@@ -1,0 +1,15 @@
+1,2,3, n-1 : 1 -> 2에 2^(n-1) - 1번 움직여야 함
+n : 1 -> 3에 1번 움직여야 함
+1,2,3, ..., n-1 : 2->3에 2^(n-1) - 1번 움직여야 함.
+
+def func(int start, int end, int via, int n, int k) 
+    if k < 2^(n-1) - 1:
+        func(start, via, end, n-1, k)
+    el
+
+
+-- 회고
+solve(via, end, start, n - 1, k - temp - 1);에서
+k-temp-1자리에 k를 해서 k가 안 줄어들었다.
+
+pow 쓰면 double stl이 되서 오차가 발생하는 거 같다. power라고 함수 만들자.
