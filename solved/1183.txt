@@ -1,0 +1,46 @@
+10046
+21 1 1 6 11 2
+10046 -> 10045
+
+일단 최대로 하나 만들자.
+이걸 used[0], used[1], used[2], used[3], used[4], used[5]라 하자.
+여기서 전이를 시켜야 하는데, 어케하냐?
+맨앞 used[i]를 i+1 ~ 5에 전이시킨다고하자.
+5부터 먼저 시도하자. 
+remain = number[j]-used[j]
+remain*value[j] >= used[i]*value[i] 이면
+    used[j] = 0
+    use = used[i]*value[i]/value[j]
+    used[i]+=use 
+아니면
+    use = [ used[i]*value[i]/value[j] ] 
+    used[j]+= use
+    used[i] -= (use*value[j])/value[i]
+    
+
+    value[j] * x = value[i] * y가 되도록 하는 최대의 정수 x
+    x <= remain
+    unit = value[i] / value[j];
+    remain
+    (remain /  (value[i]) / value[j])
+
+최대로 만드는 방법
+number[i]*value[i] >= w이면
+    use = [w/value[i]]
+아니면
+    use = number[i]
+
+[a/b] = (a+1)/b -1이 아닌가?
+
+모르겠다. 걍 답 봐야겠다.
+
+-- 회고
+우리는 최소만 안다. 이것도 역과정이었다.
+(전체 동전 가격 - 주어진 가격)을 최소로 만들면,
+주어진 가격을 최대로 만들 수 있다.
+
+** 잘 아는 문제로 환원시키자.
+직관이 안 맞을 수도 있다.
+난 작은 동전을 최대한 많이 써야 한다는 걸 어케 정확히 표현할 까 고민했는데, 잘못된 방향이었다.
+
+유한 차원 배낭 문제 dp로도 풀린다고 한다.
